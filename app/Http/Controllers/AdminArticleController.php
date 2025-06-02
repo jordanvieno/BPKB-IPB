@@ -38,9 +38,22 @@ class AdminArticleController extends Controller
             'name' => 'required|string|max:255',
             'content' => 'required|string',
             'date' => 'required|date',
+            'author' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'is_draft' => 'nullable|boolean',
         ]);
 
-        Article::create($request->only('name', 'content', 'date'));
+        $data = $request->only('name', 'content', 'date', 'author');
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('articles', 'public');
+            $data['image_path'] = $imagePath;
+        }
+
+        // Set is_draft to true if not provided (default to draft)
+        $data['is_draft'] = $request->input('is_draft', true);
+
+        Article::create($data);
 
         return redirect()->route('admin.articles.index')->with('success', 'Article created successfully.');
     }
@@ -62,9 +75,22 @@ class AdminArticleController extends Controller
             'name' => 'required|string|max:255',
             'content' => 'required|string',
             'date' => 'required|date',
+            'author' => 'nullable|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'is_draft' => 'nullable|boolean',
         ]);
 
-        $article->update($request->only('name', 'content', 'date'));
+        $data = $request->only('name', 'content', 'date', 'author');
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('articles', 'public');
+            $data['image_path'] = $imagePath;
+        }
+
+        // Set is_draft to true if not provided (default to draft)
+        $data['is_draft'] = $request->input('is_draft', true);
+
+        $article->update($data);
 
         return redirect()->route('admin.articles.index')->with('success', 'Article updated successfully.');
     }
@@ -77,5 +103,13 @@ class AdminArticleController extends Controller
         $article->delete();
 
         return redirect()->route('admin.articles.index')->with('success', 'Article deleted successfully.');
+    }
+
+    /**
+     * Display the specified article.
+     */
+    public function show(Article $article)
+    {
+        return view('admin.articles.show', compact('article'));
     }
 }

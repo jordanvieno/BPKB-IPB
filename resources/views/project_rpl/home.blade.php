@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Website BPKB</title>
   <link rel="stylesheet" href="{{ asset('project_rpl/external.css') }}" />
+  <link rel="stylesheet" href="{{ asset('project_rpl/patch_ops_fix.css') }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -25,9 +26,9 @@
         <nav>
         <!-- HOME -->
         <div class="nav-item">
-          <a href="#home">Home</a>
+          <a href="/">Home</a>
           <div class="dropdown1">
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
             <a href="#rank">Rangking</a>
             <a href="#news">News</a>
             <a href="#dokumentasi">Dokumentasi</a>
@@ -37,7 +38,7 @@
 
         <!-- ABOUT US -->
         <div class="nav-item">
-          <a href="#about">About Us</a>
+          <a href="/about-us">About Us</a>
           <div class="dropdown2">
             <a href="#Introduction">Introduction</a>
             <a href="#fungsi">Fungsi BPKB</a>
@@ -51,9 +52,9 @@
         </div>
 
         <!-- DOCUMENT -->
-        <div class="nav-item">
-          <a href="#document">Document</a>
-        </div>
+      <div class="nav-item">
+        <a href="{{ url('/document') }}">Document</a>
+      </div>
       </nav>
 
       <div class="searchbar">
@@ -113,6 +114,8 @@
       </div>
     </section>
 
+    <div class="section-separator"></div>
+
     <section id="dokumentasi">
       
       <div class="containerevent swiper">
@@ -120,106 +123,70 @@
         <h1 class="Eventtt">Documentation</h1>
         <ul class="eventcard swiper-wrapper">
 
-          <!-- dokumentasi 1 📷 -->
+          @foreach ($documentations as $documentation)
           <li class="eventphoto swiper-slide">
-            <a href="#" class="eventlink">
-              <h3 class="eventittle1">FGD Sustainability Forum</h3>
-              <img src="{{ asset('project_rpl/asset/dokumentasi/Screenshot 2025-05-12 153450.png') }}" alt="Event 1" class="eventimg1">
-              <p class="tanggal1">20/11/2023</p>
+            <a href="#" class="eventlink" style="display: inline-block; width: 260px; margin-right: 20px;">
+              <h3 class="eventittle1">{{ $documentation->description }}</h3>
+              <img src="{{ asset('storage/' . $documentation->photo_path) }}" alt="{{ $documentation->description }}" class="eventimg1">
+              <p class="tanggal1">{{ \Carbon\Carbon::parse($documentation->date)->format('d/m/Y') }}</p>
             </a>
           </li>
-          
-          <!-- dokumentasi 1 📷 -->
-          <li class="eventphoto swiper-slide">
-            <a href="#" class="eventlink">
-              <h3 class="eventittle1">Praktik Pembelajaran Pengelolaan Sampah dan Urban Farming di Desa Cibanteng</h3>
-              <img src="{{ asset('project_rpl/asset/dokumentasi/Screenshot 2025-05-12 153608.png') }}" alt="Event 1" class="eventimg1">
-              <p class="tanggal1">20/11/2023</p>
-            </a>
-          </li>
-
-          <!-- dokumentasi 1 📷 -->
-          <li class="eventphoto swiper-slide">
-            <a href="#" class="eventlink">
-              <h3 class="eventittle1">Kajian Lapangan Timbulan Sampah di Lingkungan Kampus IPB 2024</h3>
-              <img src="{{ asset('project_rpl/asset/dokumentasi/Screenshot 2025-05-12 153711.png') }}" alt="Event 1" class="eventimg1">
-              <p class="tanggal1">20/11/2023</p>
-            </a>
-          </li>
-
-          <!-- dokumentasi 1 📷 -->
-          <li class="eventphoto swiper-slide">
-            <a href="#" class="eventlink">
-              <h3 class="eventittle1">Pelatihan Komunikasi Publik dan Media Sosial untuk Duta Sustainability</h3>
-              <img src="{{ asset('project_rpl/asset/dokumentasi/Screenshot 2025-05-12 153815.png') }}" alt="Event 1" class="eventimg1">
-              <p class="tanggal1">20/11/2023</p>
-            </a>
-          </li> 
-
-          <!-- dokumentasi 1 📷 -->
-          <li class="eventphoto swiper-slide">
-            <a href="#" class="eventlink">
-              <h3 class="eventittle1">Pembelajaran Praktik Pengelolaan Sampah Berbasis Komunitas di School of Waste Management (SWAM)</h3>
-              <img src="{{ asset('project_rpl/asset/dokumentasi/Screenshot 2025-05-12 153541.png') }}" alt="Event 1" class="eventimg1">
-              <p class="tanggal1">20/11/2023</p>
-            </a>
-          </li>
+          @endforeach
         </ul>
 
         <div class="swiper-pagination"></div>
-        <div class="swiper-slide-button swiper-button-prev"></div>
-        <div class="swiper-slide-button swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
       </div>
 
     </section>
 
-    <section id="ops">
-      <img class="bgini" src="{{ asset('project_rpl/asset/bg ops.png') }}">
+    <section id="ops" style="background-image: url('{{ asset('project_rpl/asset/bg-ops.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; width: 100vw; height: 100vh;">
       <div class="contops">
         <h3 class="tittleops">Green Campus Operations</h3>
         <div class="operation">
 
-          <!-- icon 1 -->
+          <!-- Settings and Infrastructure -->
           <div class="ops-item">
-            <img src="{{ asset('project_rpl/asset/bangunan.png') }}" alt="icon1" class="icon1">
-            <p class="tittlecon">Settings and Infrastructure</p>
-            <p class="totdata">1400/1500</p>
+            <img src="{{ asset('project_rpl/asset/bangunan.png') }}" alt="Settings and Infrastructure" class="icon1">
+            <p class="tittlecon">Setting and Infrastructure</p>
+            <p class="totdata">{{ $data['Setting and Infrastructure'] ?? 140 }}/{{ $maxValues['Setting and Infrastructure'] ?? 1500 }}</p>
           </div>
 
-           <!-- icon 1 -->
+          <!-- Energy Conversion -->
           <div class="ops-item">
-            <img src="{{ asset('project_rpl/asset/energy.png') }}" alt="icon1" class="icon1">
-            <p class="tittlecon">Settings and Infrastructure</p>
-            <p class="totdata">1400/1500</p>
+            <img src="{{ asset('project_rpl/asset/energy.png') }}" alt="Energy Conversion" class="icon1">
+            <p class="tittlecon">Energy Conversion</p>
+            <p class="totdata">{{ $data['Energy Conversion'] ?? 140 }}/{{ $maxValues['Energy Conversion'] ?? 1500 }}</p>
           </div>
 
-           <!-- icon 1 -->
+          <!-- Water -->
           <div class="ops-item">
-            <img src="{{ asset('project_rpl/asset/water.png') }}" alt="icon1" class="icon1">
-            <p class="tittlecon">Settings and Infrastructure</p>
-            <p class="totdata">1400/1500</p>
+            <img src="{{ asset('project_rpl/asset/water.png') }}" alt="Water" class="icon1">
+            <p class="tittlecon">Water</p>
+            <p class="totdata">{{ $data['Water'] ?? 140 }}/{{ $maxValues['Water'] ?? 1500 }}</p>
           </div>
 
-           <!-- icon 1 -->
+          <!-- Education and Research -->
           <div class="ops-item">
-            <img src="{{ asset('project_rpl/asset/education.png') }}" alt="icon1" class="icon1">
-            <p class="tittlecon">Settings and Infrastructure</p>
-            <p class="totdata">1400/1500</p>
+            <img src="{{ asset('project_rpl/asset/education.png') }}" alt="Education and Research" class="icon1">
+            <p class="tittlecon">Education and Research</p>
+            <p class="totdata">{{ $data['Education and Research'] ?? 140 }}/{{ $maxValues['Education and Research'] ?? 1500 }}</p>
           </div>
 
-          <!-- icon 1 -->
+          <!-- Transportation -->
           <div class="ops-item">
-            <img src="{{ asset('project_rpl/asset/tutt.png') }}" alt="icon1" class="icon1">
-            <p class="tittlecon">Settings and Infrastructure</p>
-            <p class="totdata">1400/1500</p>
+            <img src="{{ asset('project_rpl/asset/tutt.png') }}" alt="Transportation" class="icon1">
+            <p class="tittlecon">Transportation</p>
+            <p class="totdata">{{ $data['Transportation'] ?? 140 }}/{{ $maxValues['Transportation'] ?? 1500 }}</p>
           </div>
 
-           <!-- icon 1 -->
+          <!-- Waste -->
           <div class="ops-item">
-            <img src="{{ asset('project_rpl/asset/waste.png') }}" alt="icon1" class="icon1">
-            <p class="tittlecon">Settings and Infrastructure</p>
-            <p class="totdata">1400/1500</p>
+            <img src="{{ asset('project_rpl/asset/sampah.png') }}" alt="Waste" class="icon1" style="width: 150px; height: 150px; object-fit: contain;">
+            <p class="tittlecon">Waste</p>
+            <p class="totdata">{{ $data['Waste'] ?? 140 }}/{{ $maxValues['Waste'] ?? 1500 }}</p>
           </div>
 
         </div>

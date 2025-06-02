@@ -1,0 +1,129 @@
+/* Fix for Green Campus Operations white washed section */
+
+/* Add a dark semi-transparent overlay behind the content */
+#ops {
+  position: relative;
+  overflow: hidden;
+}
+
+#ops::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 0;
+}
+
+/* Ensure background image is below overlay */
+#ops .bgini {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Bring content above overlay */
+#ops .contops {
+  position: relative;
+  z-index: 1;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Add subtle text shadow for better readability */
+#ops .contops .tittleops,
+#ops .contops .ops-item,
+#ops .contops .tittlecon,
+#ops .contops .totdata {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Override boxed layout for full screen sections */
+
+#rank, #news, #dokumentasi {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 20px 20px 40px 20px !important;
+  background-color: #E8F0FF !important;
+  border-radius: 0 !important;
+}
+
+#news {
+  margin-bottom: 40px !important;
+}
+
+.section-separator {
+  height: 40px;
+  background-color: #E8F0FF; /* Changed to match News background color */
+  width: 100%;
+}
+
+#news .news-container, #dokumentasi .eventwrap {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+}
+
+/* Reduce gap between documentation cards and add padding to avoid image collision with arrows */
+#dokumentasi .eventwrap {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+#dokumentasi .eventwrap .eventcard {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  gap: 80px !important;
+}
+
+#dokumentasi .eventwrap .eventcard {
+  gap: 80px !important;
+}
+
+#dokumentasi .eventwrap .eventcard .eventphoto {
+  width: 260px !important;
+}
+
+/* Swiper navigation buttons */
+.swiper-slide-button.swiper-button-prev,
+.swiper-slide-button.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  box-shadow: none !important;
+  filter: none !important;
+  pointer-events: auto; /* Ensure buttons are clickable */
+}
+
+.swiper-slide-button.swiper-button-prev {
+  left: 10px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+}
+
+.swiper-slide-button.swiper-button-next {
+  right: 10px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z'/%3E%3C/svg%3E");
+}
+
+.swiper-slide-button.swiper-button-prev:hover,
+.swiper-slide-button.swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
