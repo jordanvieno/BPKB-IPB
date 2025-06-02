@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{ asset('project_rpl/external.css') }}">
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -32,5 +33,7 @@
                 @yield('content')
             </main>
         </div>
+        @include('layouts.footer')
+        <script src="{{ asset('project_rpl/script.js') }}"></script>
     </body>
 </html>

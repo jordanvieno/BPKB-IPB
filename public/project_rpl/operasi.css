@@ -1,0 +1,84 @@
+/* Styling for Admin Operasi Panel */
+body {
+  background-color: #e0f2f1;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  color: #004d40;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #00796b;
+}
+
+.ops-item {
+  margin-bottom: 25px;
+  padding: 15px 20px;
+  border: 1px solid #b2dfdb;
+  border-radius: 8px;
+  background-color: #b2dfdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ops-item h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.ops-item .value-display {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #004d40;
+  margin-right: 15px;
+  min-width: 80px;
+  text-align: right;
+  flex: 1;
+}
+
+.ops-item input[type="number"] {
+  width: 100px;
+  padding: 6px 10px;
+  border: 1px solid #004d40;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #004d40;
+  flex: 1;
+}
+
+.ops-item button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  flex: 0 0 auto;
+}
+
+.ops-item button:hover {
+  background-color: #004d40;
+}
+
+.success-message {
+  text-align: center;
+  color: #2e7d32;
+  font-weight: 600;
+  margin-bottom: 20px;
+}

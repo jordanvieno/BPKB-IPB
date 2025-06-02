@@ -13,6 +13,9 @@ class Article extends Model
         'name',
         'content',
         'date',
+        'author',
+        'image_path',
+        'is_draft',
     ];
 
     protected $casts = [
