@@ -1,61 +1,61 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# BPKB IPB
+# About
+Website BPKB IPB merupakan platform dari BPKB IPB (Badan Pengembangan Kampus Berkelanjutan) yang diperuntukan untuk mengenalkan BPKB itu sendiri, mulai dari penjelasan dan manfaat akan keberadaanya BPKB IPB. Hingga kegiatan BPKB IPB. Hal ini agar antusiasme dari end user untuk Kampus Berkelanjutan semakin meningkat.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Tim Kami
+- Hanifah Syahidah (G6401231067) Frontend Developer
+- Jelita Wahyuningtyas (G6401231048) Frontend Developer
+- Salma Putri Hanifah (G6401231010) UI/UX Designer
+- Muhammad Naufal Fathurrahman (G6401231094) Backend Developer
+- Jordan Vieno Simamora (G6401231135) Backend Developer
 
-## About Laravel
+# Diagram
+Entity Relationship Diagram
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+![WhatsApp Image 2025-06-03 at 07 54 38_ca8fe2d4](https://github.com/user-attachments/assets/baff4984-4d16-45db-8922-f7b2ab07eab9)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+Class Diagram
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+![WhatsApp Image 2025-06-03 at 07 54 56_8182fd3f](https://github.com/user-attachments/assets/11020c28-952c-461a-804c-3620c430d8be)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Activity Diagram
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+![WhatsApp Image 2025-06-03 at 07 53 44_07fcb7dc](https://github.com/user-attachments/assets/7863e0d6-5bd8-44c4-ac29-684caa50e304)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Requierment untuk Menginstall :
+PHP >= 8.3
+MySQL 8.0
+Apache >= 2.4
+Laragon
 
-## Code of Conduct
+Installasi :
+1. Menginstall Laragon 
+Buka laragon
+Pastikan bahwa versi sudah sesuai
+Klik Start All
+buka terminal laragon
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. Mengeclone repository
+clone link berikut dengan mengetik pada terminal :git clone https://github.com/jordanvieno/Project-RPL-Kelompok-6.git , 
+kemudian ketik cd Project-RPL-Kelompok-6
 
-## Security Vulnerabilities
+3. ketik pada terminal composer install
+4. Cari folder .env pada folder laravel kalian dan configure menjadi
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_username
+    DB_PASSWORD=your_password
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. Ketik pada terminal php artisan storage:link
+6. Ketika npm install , kemudian npm run dev
+7. Kemudian ketika, php artisan serve
+8. Buka pada browser http://http://127.0.0.1:8000/
