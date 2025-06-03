@@ -29,33 +29,5 @@ Activity Diagram
 
 ![WhatsApp Image 2025-06-03 at 07 53 44_07fcb7dc](https://github.com/user-attachments/assets/7863e0d6-5bd8-44c4-ac29-684caa50e304)
 
-Requierment untuk Menginstall :
-PHP >= 8.3
-MySQL 8.0
-Apache >= 2.4
-Laragon
-
-Installasi :
-1. Menginstall Laragon 
-Buka laragon
-Pastikan bahwa versi sudah sesuai
-Klik Start All
-buka terminal laragon
-
-2. Mengeclone repository
-clone link berikut dengan mengetik pada terminal :git clone https://github.com/jordanvieno/Project-RPL-Kelompok-6.git , 
-kemudian ketik cd Project-RPL-Kelompok-6
-
-3. ketik pada terminal composer install
-4. Cari folder .env pada folder laravel kalian dan configure menjadi
-    DB_CONNECTION=mysql
-    DB_HOST=127.0.0.1
-    DB_PORT=3306
-    DB_DATABASE=your_database_name
-    DB_USERNAME=your_username
-    DB_PASSWORD=your_password
-
-5. Ketik pada terminal php artisan storage:link
-6. Ketika npm install , kemudian npm run dev
-7. Kemudian ketika, php artisan serve
-8. Buka pada browser http://http://127.0.0.1:8000/
+# Website BPKB IPB
+https://bpkb-ipb-master-97wr6k.laravel.cloud/
