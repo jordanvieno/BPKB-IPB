@@ -87,8 +87,8 @@
                 @endif
 
                 <div class="form-buttons">
-                    <button type="button" class="btn-outline" id="uploadBtn">Upload</button>
-                    <button type="submit" class="btn-primary">Save Draft</button>
+                   
+                    <button type="submit" class="btn-primary">Upload</button>
                 </div>
             </form>
         </main>

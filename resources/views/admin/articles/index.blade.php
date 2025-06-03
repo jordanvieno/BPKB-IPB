@@ -106,7 +106,7 @@
 
 @section('content')
     <div class="form-container">
-        <h1>Manage Articles</h1>
+        <h1>Manage News</h1>
 
         @if(session('success'))
             <div class="success-message">
@@ -114,7 +114,7 @@
             </div>
         @endif
 
-        <a href="{{ route('admin.articles.create') }}" class="primary-btn">Create New Article</a>
+        <a href="{{ route('admin.articles.create') }}" class="primary-btn">Create New News</a>
 
         <table>
             <thead>
