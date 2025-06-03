@@ -24,11 +24,11 @@
       <!-- ABOUT US -->
       <div class="nav-item">
         <a href="#about">About Us</a>
-        <div class="dropdown2">
-          <a href="#Introduction">Introduction</a>
-          <a href="#fungsi">Fungsi BPKB</a>
-          <a href="#struktur">Struktur Organisasi</a>
-        </div>
+          <div class="dropdown2">
+            <a href="/about-us#Introduction">Introduction</a>
+            <a href="/about-us#fungsi">Fungsi BPKB</a>
+            <a href="/about-us#struktur">Struktur Organisasi</a>
+          </div>
       </div>
 
       <!-- BERITA -->

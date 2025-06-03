@@ -22,9 +22,9 @@
         <div class="nav-item">
           <a href="{{ url('/about-us') }}">About Us</a>
           <div class="dropdown2">
-            <a href="#Introduction">Introduction</a>
-            <a href="#fungsi">Fungsi BPKB</a>
-            <a href="#struktur">Struktur Organisasi</a>
+            <a href="{{ url('/about-us#Introduction') }}">Introduction</a>
+            <a href="{{ url('/about-us#fungsi') }}">Fungsi BPKB</a>
+            <a href="{{ url('/about-us#struktur') }}">Struktur Organisasi</a>
           </div>
         </div>
 
