@@ -81,15 +81,14 @@
       <div class="rank-wrapper">
 <img class ="certificate" src="{{ asset('project_rpl/asset/Group 11.jpg') }}" width="563px" height="422px"> 
           <div class ="initext">
-            <h2 class ="ser2025">2025</h2>
-            <p class ="ket2025">keterangan kemenangan 2025</p>
-            <hr>
+
             <h2 class ="ser2024">2024</h2>
-            <p class ="ket2024">keterangan kemenangan 2024</p>
-            <hr>
-            <h2 class ="ser2023">2023</h2>
-            <p class ="ket2023">keterangan kemenangan 2023</p>
-            <hr>
+            <p class ="ket2024">IPB University meraih peringkat 29 di dunia sebagai Kampus Hijau</p>
+            <p class ="ket2024">Berkelanjutan versi UI GreenMetric World University Rankings 2024</p>
+            <p class ="ket2024">Posisi tersebut meningkat dari peringkat 34 pada tahun 2023 lalu.</p>
+            <p class ="ket2024">Prestasi ini diberikan pada UI GreenMetric   World   University </p>
+            <p class ="ket2024">Rankings 2024 yang dilaksanakan di Sao Paulo University, Brazil.</p>
+ 
           </div>
     </div>
     </section>
