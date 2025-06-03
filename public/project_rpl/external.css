@@ -8,6 +8,10 @@ body {
   background-color: transparent;
 }
 
+header nav a {
+  font-weight: 100;
+}
+
 /* Card styles for roadmap page */
 .card {
   background-color: white;
