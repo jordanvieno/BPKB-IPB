@@ -77,9 +77,9 @@
     </section>
 
     <section id="rank"> 
-      <h1 class ="judului">Journey of UI Green Matic</h1>
+      <h1 class ="judului">Journey of UI GreenMetric</h1>
       <div class="rank-wrapper">
-        <img class ="sertificate" src="{{ asset('project_rpl/asset/Group 11.png') }}"> 
+<img class ="certificate" src="{{ asset('project_rpl/asset/Group 11.jpg') }}" width="563px" height="422px"> 
           <div class ="initext">
             <h2 class ="ser2025">2025</h2>
             <p class ="ket2025">keterangan kemenangan 2025</p>
