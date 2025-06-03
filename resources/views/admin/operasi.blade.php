@@ -10,7 +10,7 @@
         <div class="success-message">{{ session('success') }}</div>
     @endif
 
-    <form method="POST" action="{{ route('admin.operasi.update') }}">
+<form method="POST" action="{{ route('admin.operasi.update') }}">
         @csrf
         <!-- Ensure no @method('PUT') is present -->
 

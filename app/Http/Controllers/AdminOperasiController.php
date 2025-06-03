@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 class AdminOperasiController extends Controller
 {
     // Show the operasi page with current numbers
-    public function index()
+public function index()
     {
         // Retrieve all operasi records
         $operations = Operation::all();
+
+        \Log::info('AdminOperasiController@index operations:', $operations->toArray());
 
         // Prepare data and maxValues arrays
         $data = [];
@@ -25,8 +27,11 @@ class AdminOperasiController extends Controller
     }
 
     // Handle update form submission
-    public function update(Request $request)
+public function update(Request $request)
     {
+        \Log::info('AdminOperasiController@update called');
+        \Log::info('Request data: ', $request->all());
+
         // Retrieve all operasi records
         $operations = Operation::all();
 
@@ -37,9 +42,12 @@ class AdminOperasiController extends Controller
         }
         $validated = $request->validate($rules);
 
+        \Log::info('Validated data: ', $validated);
+
         // Update operasi values in database
         foreach ($validated as $category => $value) {
-            Operation::where('category', $category)->update(['value' => $value]);
+            $updated = Operation::where('category', $category)->update(['value' => $value]);
+            \Log::info("Updated category: $category with value: $value, result: $updated");
         }
 
         return redirect()->route('admin.operasi.index')->with('success', 'Data updated successfully.');
